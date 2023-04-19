@@ -1,6 +1,6 @@
 # StoreApp | Swift mobile test app
 
-A store app with authorization that includes checking for an existing user and throws an error if there is no input.
+Authenticated store app that includes validating an existing user, validating an email, and throwing an error if there is no data.
 
 Implemented a table with collections inside cells that displays products. Discounted products have an enlarged cell and additional views.
 
@@ -33,3 +33,7 @@ You can change your profile photo, it will also change on the store page.
 <img width="300" alt="Screenshot 2023-01-09 v3" src="https://user-images.githubusercontent.com/118223099/233084125-7863ce0e-32f3-45e0-9814-c1edf83e9744.png">
 
 > Main page of the store with goods
+
+<img width="300" alt="Screenshot 2023-01-09 v3" src="https://user-images.githubusercontent.com/118223099/233087614-9781910a-f155-4212-8ab8-6ae75f346c62.PNG">
+
+> Photo editing

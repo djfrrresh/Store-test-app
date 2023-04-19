@@ -1,2 +1,0 @@
-# CoinTail
-# CoinTail

@@ -10,13 +10,13 @@ import UIKit
 
 extension UILabel {
     
-    convenience init(text: String, alignment: NSTextAlignment, color: UIColor, fontSize: Int) {
+    convenience init(text: String, alignment: NSTextAlignment = .center, color: UIColor, fontSize: CGFloat, fontName: String) {
         self.init()
         self.text = text
+        self.font = UIFont(name: fontName, size: fontSize)
         self.textColor = color
         self.textAlignment = alignment
         self.numberOfLines = 0
-        self.font = .systemFont(ofSize: CGFloat(fontSize))
         self.adjustsFontSizeToFitWidth = true
         self.translatesAutoresizingMaskIntoConstraints = false
     }

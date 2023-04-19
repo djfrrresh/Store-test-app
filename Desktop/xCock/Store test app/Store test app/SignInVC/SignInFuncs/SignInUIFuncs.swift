@@ -11,46 +11,44 @@ import EasyPeasy
 
 extension SignInVC {
     
-    func signInStack() {
-        let signInStack = UIStackView()
+    func signInTFStack() {
+        let signInTFStack = UIStackView()
         
-        self.setStack(stack: signInStack, axis: .vertical, spacing: 35, alignment: .center, distribution: .fill, viewsArray: [self.firstNameTF, self.lastNameTF, self.emailTF, self.signInButton])
+        self.setStack(stack: signInTFStack, axis: .vertical, spacing: 35, alignment: .fill, distribution: .fill, viewsArray: [self.firstNameTF, self.lastNameTF, self.emailTF, self.signInButton])
         
-        view.addSubview(signInStack)
-        signInStack.easy.layout([CenterX(), CenterY(), Left(42), Right(42)])
-        
-        self.firstNameTF.easy.layout([Left(16), Right(16)])
-        self.lastNameTF.easy.layout([Left(16), Right(16)])
-        self.emailTF.easy.layout([Left(16), Right(16)])
-        self.signInButton.easy.layout([Left(16), Right(16)])
+        self.view.addSubview(signInTFStack)
+        signInTFStack.easy.layout([CenterX(), Top(80).to(self.signInLabel, .bottom), Left(42), Right(42)])
     }
 
-    func logInStack() {
+    func haveAccountStack() {
         let haveAccountStack = UIStackView()
         
         self.setStack(stack: haveAccountStack, axis: .horizontal, spacing: 10, alignment: .fill, distribution: .fill, viewsArray: [self.haveAccountLabel, self.logInLabel])
         
-        view.addSubview(haveAccountStack)
+        self.view.addSubview(haveAccountStack)
         haveAccountStack.easy.layout([Top(20).to(self.signInButton, .bottom), Left(0).to(self.signInButton, .left)])
     }
     
     func signInWithStack() {
-        let appleImageView = UIImageView(image: self.appleLogo!)
-        let googleImageView = UIImageView(image: self.googleLogo!)
-        
         let servicesStack = UIStackView()
         let appleStack = UIStackView()
         let googleStack = UIStackView()
                 
-        self.setStack(stack: googleStack, axis: .horizontal, spacing: 15, alignment: .center, distribution: .fill, viewsArray: [googleImageView, self.signInGoogle])
-        googleImageView.easy.layout([Height(28), Width(28)])
+        self.setStack(stack: googleStack, axis: .horizontal, spacing: 15, alignment: .fill, distribution: .fill, viewsArray: [self.googleImageView, self.signInGoogle])
+        self.googleImageView.easy.layout([Height(28), Width(28)])
         
-        self.setStack(stack: appleStack, axis: .horizontal, spacing: 15, alignment: .fill, distribution: .fill, viewsArray: [appleImageView, self.signInApple])
-        appleImageView.easy.layout([Height(28), Width(28)])
+        self.setStack(stack: appleStack, axis: .horizontal, spacing: 15, alignment: .fill, distribution: .fill, viewsArray: [self.appleImageView, self.signInApple])
+        self.appleImageView.easy.layout([Height(28), Width(28)])
         
-        self.setStack(stack: servicesStack, axis: .vertical, spacing: 50, alignment: .center, distribution: .fill, viewsArray: [googleStack, appleStack])
+        self.setStack(stack: servicesStack, axis: .vertical, spacing: 40, alignment: .center, distribution: .fill, viewsArray: [googleStack, appleStack])
+        
         view.addSubview(servicesStack)
-        servicesStack.easy.layout([Top(80).to(self.haveAccountLabel, .bottom), Left(16), Right(16)])
+        servicesStack.easy.layout([Bottom(80).to(self.view.safeAreaLayoutGuide, .bottom), Left(0), Right(0)])
+    }
+    
+    func signInSubviews() {
+        self.view.addSubview(self.signInLabel)
+        self.signInLabel.easy.layout([Top(20).to(self.view.safeAreaLayoutGuide, .top), Left(0), Right(0)])
     }
     
 }

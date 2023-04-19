@@ -19,6 +19,8 @@ extension UIButton {
         self.backgroundColor = background
         self.setTitleColor(textColor, for: .normal)
         
+        self.titleLabel?.font = UIFont(name: "Avenir Heavy", size: 16)
+        
         self.setTitle(name, for: .normal)
         
         self.easy.layout([Height(46)])

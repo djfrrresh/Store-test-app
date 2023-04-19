@@ -17,4 +17,16 @@ extension SignInVC {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @objc func goToStoreVC() {
+        self.view.window?.rootViewController = TabBarVC()
+        self.view.window?.makeKeyAndVisible()
+    }
+    
+    @objc func signInAction() {
+        if self.checkSingInValues() {
+            self.view.window?.rootViewController = TabBarVC()
+            self.view.window?.makeKeyAndVisible()
+        }
+    }
+    
 }

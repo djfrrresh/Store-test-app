@@ -1,6 +1,0 @@
-framework module Pods_Store_test_app {
-  umbrella header "Pods-Store test app-umbrella.h"
-
-  export *
-  module * { export * }
-}
